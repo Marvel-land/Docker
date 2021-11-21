@@ -1,0 +1,16 @@
+name: rom
+on:
+  workflow_dispatch:
+jobs:
+  rom:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Packages
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: ${{ secrets.DOCKER_FILE }}
+        repository: marvelmathesh/docker
+        tags: ${{ secrets.DOCKER_TAG }}
