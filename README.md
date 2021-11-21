@@ -1,0 +1,1 @@
+- do `docker pull marvel/docker:rom` to get **Dependencies** for building rom.
